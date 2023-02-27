@@ -1,0 +1,29 @@
+#project-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  color: #1D7873;
+}
+
+.main-nav-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 30px;
+  background-color: #1D7873;
+  width: 100%;
+}
+
+.nav-item {
+  padding-left: 15px;
+}
+
+#project-img {
+  width: 20em;
+  height: 20em;
+}
