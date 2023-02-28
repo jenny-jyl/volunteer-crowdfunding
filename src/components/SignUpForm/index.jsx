@@ -67,7 +67,7 @@ function SignUpForm() {
                     onChange={handleChange}
                 />
             </div> */}
-            <div>
+            <div className='signUpField'>
                 <label htmlFor='username'>Username:</label>
                 <input
                     type="text"
@@ -76,8 +76,8 @@ function SignUpForm() {
                     onChange={handleChange}
                 />
             </div>
-            <div>
-                <label htmlFor='email'>Email</label>
+            <div className='signUpField'>
+                <label htmlFor='email'>Email:</label>
                 <input
                     type="text"
                     id="email"
@@ -85,7 +85,7 @@ function SignUpForm() {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='signUpField'>
                 <label htmlFor='password'>Password:</label>
                 <input
                     type="password"
@@ -94,7 +94,9 @@ function SignUpForm() {
                     onChange={handleChange}
                 />
             </div>
-            <button type="submit" onClick={handleSubmit}>Login</button>
+            <div className='signUpField'>
+                <button type="submit" onClick={handleSubmit}>Login</button>
+            </div>
         </form>
     )
 };

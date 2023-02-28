@@ -1,9 +1,9 @@
 .project-card {
-    border: 1px solid #C2D1C9;
-    box-shadow: 0px 0px 5px #C2D1C9;
+    border: 1px solid #bcbcbc;
+    box-shadow: 0px 0px 5px #dcece3;
     margin: 20px;
     padding: 10px;
-    background-color: #C2D1C9;
+    background-color: #cdcdcd;
     border-radius: 25px
 }
 

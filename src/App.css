@@ -44,3 +44,21 @@ h3 {
   /* Do not repeat the image */
   background-size: cover;
 }
+
+.signUpField {
+  padding: 10px;
+  display: flex;
+  justify-content: right;
+  margin-right: 40%;
+}
+
+label {
+  color: #5F7783;
+}
+
+.signInField {
+  padding: 10px;
+  display: flex;
+  justify-content: right;
+  margin-right: 40%;
+}

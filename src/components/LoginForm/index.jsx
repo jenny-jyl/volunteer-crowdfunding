@@ -25,7 +25,9 @@ function LoginForm() {
         if (credentials.username && credentials.password) {
             postData().then((response) => {
                 window.localStorage.setItem("token", response.token);
+                // window.location.reload(false);
                 navigate("/");
+                // setIsLoggedIn(true);
             })
         }
     };
@@ -45,7 +47,7 @@ function LoginForm() {
 
     return (
         <form>
-            <div>
+            <div className='signInField'>
                 <label htmlFor='username'>Username:</label>
                 <input
                     type="text"
@@ -54,7 +56,7 @@ function LoginForm() {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className='signInField'>
                 <label htmlFor='password'>Password:</label>
                 <input
                     type="password"
@@ -63,7 +65,9 @@ function LoginForm() {
                     onChange={handleChange}
                 />
             </div>
-            <button type="submit" onClick={handleSubmit}>Login</button>
+            <div className='signInField'>
+                <button type="submit" onClick={handleSubmit}>Login</button>
+            </div>
         </form>
     )
 };

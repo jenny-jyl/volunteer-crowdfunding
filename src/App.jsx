@@ -7,6 +7,8 @@ import "./App.css";
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import ProjectHomePage from './pages/ProjectHomePage';
+import CreateProject from './pages/CreateProject';
+
 
 
 const HeaderLayout = () => {
@@ -27,13 +29,13 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'project/',
+        path: 'projects/',
         element: <ProjectHomePage />,
       },
-      // {
-      //   path: '/projects/:id',
-      //   element: <ProjectPage />,
-      // },
+      {
+        path: '/projects/:id',
+        element: <ProjectPage />,
+      },
       {
         path: '/login/',
         element: <LoginPage />,
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/signUp/',
         element: <SignUpPage />,
+      },
+      {
+        path: '/create/',
+        element: <CreateProject />,
       }
     ]
   }
@@ -48,6 +54,7 @@ const router = createBrowserRouter([
 ])
 
 function App() {
+
   return (
     <RouterProvider router={router}></RouterProvider>
   )
