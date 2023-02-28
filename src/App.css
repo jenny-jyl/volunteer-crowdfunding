@@ -11,19 +11,36 @@ h3 {
   color: #1D7873;
 }
 
+.intro-block {
+  padding: 50px;
+  background-color: #213547;
+}
+
 .main-nav-container {
   display: flex;
   justify-content: flex-start;
-  padding: 30px;
-  background-color: #1D7873;
+  padding-left: 30px;
+  padding-top: 15px;
+  background-color: #EFEDE9;
   width: 100%;
+  align-items: center;
 }
 
 .nav-item {
-  padding-left: 15px;
+  padding: 15px;
+  color: #5F7783;
+  font-weight: bold;
 }
 
 #project-img {
   width: 20em;
   height: 20em;
+}
+
+#intro-block {
+  padding: 60px;
+  background-image: url(/Users/jennyli/volunteer-crowdfunding/src/components/images/volunteerimage.jpg);
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
 }
