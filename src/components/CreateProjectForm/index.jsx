@@ -41,11 +41,11 @@ function CreateProjectForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
         postData().then((response) => {
-            // window.localStorage.setItem("token", response.token);
             ("credentials", response.credentials)
             navigate("/projects");
         })
-    };
+    }
+
 
     const postData = async () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}projects/`, {
@@ -57,8 +57,9 @@ function CreateProjectForm() {
         })
         return response.json()
     }
+
     return (
-        <form>
+        <form method="post">
             <div className='ProjectField'>
                 <label htmlFor='title'>Title:</label>
                 <input
@@ -107,11 +108,12 @@ function CreateProjectForm() {
                 />
             </div>
             <div className='ProjectField'>
-                <label htmlFor='owner'>Volunteer</label>
+                <label htmlFor='owner'>Volunteer:</label>
                 <input
                     type="text"
                     id="owner"
                     placeholder="Name of volunteer:"
+                    defaultValue="1"
                     onChange={handleChange}
                 />
             </div>
