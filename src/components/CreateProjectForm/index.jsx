@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import './CreateProjectForm.css';
+
 
 function CreateProjectForm() {
     const [credentials, setCredentials] = useState({
@@ -46,17 +48,30 @@ function CreateProjectForm() {
         })
     }
 
+    const token = localStorage.getItem('token');
 
     const postData = async () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL}projects/`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify(credentials),
-        })
-        return response.json()
-    }
+        });
+        return response.json();
+    };
+
+    // const postData = async () => {
+    //     const response = await fetch(`${import.meta.env.VITE_API_URL}projects/`, {
+    //         method: "post",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify(credentials),
+    //     })
+    //     return response.json()
+    // }
 
     return (
         <form method="post">

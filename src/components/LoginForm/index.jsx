@@ -7,6 +7,8 @@ function LoginForm() {
         password: '',
     });
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     const navigate = useNavigate();
 
     const handleChange = (event) => {
@@ -19,15 +21,27 @@ function LoginForm() {
 
     // console.log(credentials)
 
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+
+    //     if (credentials.username && credentials.password) {
+    //         postData().then((response) => {
+    //             window.localStorage.setItem("token", response.token);
+    //             // window.location.reload(false);
+    //             navigate("/");
+    //             // setIsLoggedIn(true);
+    //         })
+    //     }
+    // };
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
         if (credentials.username && credentials.password) {
             postData().then((response) => {
                 window.localStorage.setItem("token", response.token);
-                // window.location.reload(false);
-                navigate("/");
-                // setIsLoggedIn(true);
+                setIsLoggedIn(true);
+                navigate("/", { state: { isLoggedIn: true } });
             })
         }
     };

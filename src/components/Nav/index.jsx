@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
 import logo from '/Users/jennyli/volunteer-crowdfunding/src/components/images/logo.png';
 
 function Nav() {
 
     console.log(window.localStorage.getItem("token"))
 
-    const [isLoggedIn, setIsLoggedIn] = useState()
+    // const [isLoggedIn, setIsLoggedIn] = useState()
 
-    useEffect(() => {
-        if (window.localStorage.getItem("token")) {
-            setIsLoggedIn(true)
-        } else {
-            setIsLoggedIn(false)
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (window.localStorage.getItem("token")) {
+    //         setIsLoggedIn(true)
+    //     } else {
+    //         setIsLoggedIn(false)
+    //     }
+    // }, [])
+
+    // const logout = () => {
+    //     setIsLoggedIn(false)
+    //     localStorage.clear();
+    //     window.location.href = '/';
+    // }
+
+    const location = useLocation();
+
+    const isLoggedIn = location.state?.isLoggedIn || false;
 
     const logout = () => {
-        setIsLoggedIn(false)
         localStorage.clear();
         window.location.href = '/';
     }
@@ -29,7 +38,11 @@ function Nav() {
             <Link to="/projects" className="nav-item">All Projects</Link>
             {
                 isLoggedIn ? (
-                    <Link to="/" onClick={logout} className="nav-item">Logout</Link>
+                    <>
+                        <Link to="/create" className="nav-item">Create</Link>
+                        <Link to="/pledge" className="nav-item">Pledge</Link>
+                        <Link to="/" onClick={logout} className="nav-item">Logout</Link>
+                    </>
                 ) : (
                     <>
                         <Link to="/login" className="nav-item">Login</Link>
@@ -37,9 +50,10 @@ function Nav() {
                     </>
                 )
             }
-            <Link to="/create" className="nav-item">Create</Link>
         </nav>
-    )
+    );
+
 }
+
 
 export default Nav;
