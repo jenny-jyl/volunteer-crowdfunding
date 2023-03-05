@@ -62,6 +62,15 @@ function PledgeForm() {
 
   return (
     <form className="pledge-form">
+      <div className='PledgeField'>
+        <label htmlFor='project'>Project:</label>
+        <select id='project' onChange={handleChange}>
+          <option value=''>Select a project</option>
+          {projects.map(project => (
+            <option key={project.id} value={project.id}>{project.title}</option>
+          ))}
+        </select>
+      </div>
       <div className='pledgeField'>
         <label htmlFor='amount'>Amount:</label>
         <input
