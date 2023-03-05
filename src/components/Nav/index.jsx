@@ -41,6 +41,7 @@ function Nav() {
                     <>
                         <Link to="/create" className="nav-item">Create</Link>
                         <Link to="/pledge" className="nav-item">Pledge</Link>
+                        <Link to="/edit" className="nav-item">Edit project</Link>
                         <Link to="/" onClick={logout} className="nav-item">Logout</Link>
                     </>
                 ) : (

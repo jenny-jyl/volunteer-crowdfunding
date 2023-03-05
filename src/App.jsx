@@ -9,6 +9,7 @@ import SignUpPage from './pages/SignUpPage';
 import ProjectHomePage from './pages/ProjectHomePage';
 import CreateProject from './pages/CreateProject';
 import PledgeProject from './pages/PledgeProject';
+import EditProject from './pages/EditProject';
 
 
 const HeaderLayout = () => {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/pledge/',
         element: <PledgeProject />,
+      },
+      {
+        path: '/edit/',
+        element: <EditProject />,
       }
     ]
   }
